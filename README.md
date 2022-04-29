@@ -64,7 +64,7 @@
 | city          | string     | null: false                    |
 | addresses     | string     | null: false                    |
 | building      | string     |                                |
-| phone_number  | string     | null: false, unique: true      |
+| phone_number  | string     | null: false,                   |
 | order         | references | nill: false, foreign_key: true |
 
 ### Association
