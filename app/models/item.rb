@@ -14,9 +14,6 @@ class Item < ApplicationRecord
   validates :scheduled_delivery_id,  presence: true
   validates :image,                  presence: true
 
-  def was_attached?
-    self.image.attached?
-  end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
