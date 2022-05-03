@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  # belongs_to :user
+  belongs_to :user
   # has_one :order
   has_one_attached :image
 
@@ -13,7 +13,6 @@ class Item < ApplicationRecord
   validates :prefecture_id,          presence: true
   validates :scheduled_delivery_id,  presence: true
   validates :image,                  presence: true
-
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
