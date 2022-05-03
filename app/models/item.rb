@@ -6,17 +6,13 @@ class Item < ApplicationRecord
 
   validates :item_name,              presence: true
   validates :item_info,              presence: true
+  validates :price,                  presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_then_or_equal_to: 9_999_999 }
   validates :category_id,            presence: true
   validates :sales_status_id,        presence: true
   validates :shipping_fee_status_id, presence: true
   validates :prefecture_id,          presence: true
   validates :scheduled_delivery_id,  presence: true
   validates :image,                  presence: true
- 
-
-  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
-    validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_then_or_equal_to: 9_999_999 }
-  end
 
   def was_attached?
     self.image.attached?
