@@ -1,6 +1,7 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id
+
+  attr_accessor :postal_code, :prefecture_id, :city, :addresses, :building, :phone_number, :user_id, :item_id, :token
   
   validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"}
 
@@ -10,7 +11,8 @@ class OrderAddress
     validates :addresses
     validates :phone_number,  format: {with: /\A\d{10,11}\z/}
     validates :user_id       
-    validates :item_id       
+    validates :item_id     
+    validates :token  
   end
 
   def save
