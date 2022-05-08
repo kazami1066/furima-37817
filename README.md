@@ -51,11 +51,11 @@
 
 - belongs_to :user 
 - belongs_to :item
-- has_one :shipping address
+- has_one :address
 
 
-<!-- shipping addressesテーブル -->
-## shipping addresses
+<!-- addressesテーブル -->
+## addresses
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
